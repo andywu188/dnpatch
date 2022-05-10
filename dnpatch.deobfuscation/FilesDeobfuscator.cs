@@ -38,7 +38,7 @@ namespace de4dot.cui {
 			public IList<IDeobfuscatorInfo> DeobfuscatorInfos { get; set; }
 			public IList<IObfuscatedFile> Files { get; set; }
 			public IList<SearchDir> SearchDirs { get; set; }
-			public MetaDataFlags MetaDataFlags { get; set; }
+			public MetadataFlags MetadataFlags { get; set; }
 			public bool DetectObfuscators { get; set; }
 			public RenamerFlags RenamerFlags { get; set; }
 			public bool RenameSymbols { get; set; }
@@ -158,7 +158,7 @@ namespace de4dot.cui {
 				DeobfuscatorContext = deobfuscatorContext,
 				ControlFlowDeobfuscation = options.ControlFlowDeobfuscation,
 				KeepObfuscatorTypes = options.KeepObfuscatorTypes,
-				MetaDataFlags = options.MetaDataFlags,
+				MetadataFlags = options.MetadataFlags,
 				RenamerFlags = options.RenamerFlags,
 				CreateDestinationDir = !onlyScan,
 			});
@@ -176,14 +176,14 @@ namespace de4dot.cui {
 				public ModuleContext ModuleContext { get; set; }
 				public IEnumerable<IObfuscatedFile> PossibleFiles { get; set; }
 				public IEnumerable<SearchDir> SearchDirs { get; set; }
-				public code.Func<IList<IDeobfuscator>> CreateDeobfuscators { get; set; }
+				public Func<IList<IDeobfuscator>> CreateDeobfuscators { get; set; }
 				public DecrypterType? DefaultStringDecrypterType { get; set; }
 				public List<string> DefaultStringDecrypterMethods { get; set; }
 				public IAssemblyClientFactory AssemblyClientFactory { get; set; }
 				public IDeobfuscatorContext DeobfuscatorContext { get; set; }
 				public bool ControlFlowDeobfuscation { get; set; }
 				public bool KeepObfuscatorTypes { get; set; }
-				public MetaDataFlags MetaDataFlags { get; set; }
+				public MetadataFlags MetadataFlags { get; set; }
 				public RenamerFlags RenamerFlags { get; set; }
 				public bool CreateDestinationDir { get; set; }
 			}
@@ -319,7 +319,7 @@ namespace de4dot.cui {
 					Filename = Utils.GetFullPath(filename),
 					ControlFlowDeobfuscation = options.ControlFlowDeobfuscation,
 					KeepObfuscatorTypes = options.KeepObfuscatorTypes,
-					MetaDataFlags = options.MetaDataFlags,
+					MetadataFlags = options.MetadataFlags,
 					RenamerFlags = options.RenamerFlags,
 				};
 				if (options.DefaultStringDecrypterType != null)
